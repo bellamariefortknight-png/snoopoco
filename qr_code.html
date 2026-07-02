@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snoopopco QR Code</title>
+    <style>
+        body {
+            background-color: #d9e6f2;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px lightgray;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #d94d4d;
+            margin: 0 0 20px 0;
+        }
+        
+        #qrcode {
+            margin: 20px 0;
+        }
+        
+        p {
+            color: #333;
+            font-size: 16px;
+        }
+        
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d94d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        a:hover {
+            background-color: #b83a3a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Snoopopco QR Code</h1>
+        <p>Scan this code to visit our website!</p>
+        <div id="qrcode"></div>
+        <p><b>Stop Snooping, Start Popping!</b></p>
+        <a href="index.html">Back to Menu</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Generate QR code pointing to the website
+        // Replace with your actual deployed URL
+        var qr = new QRCode(document.getElementById("qrcode"), {
+            text: window.location.origin + "/index.html",
+            width: 300,
+            height: 300,
+            colorDark: "#d94d4d",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
